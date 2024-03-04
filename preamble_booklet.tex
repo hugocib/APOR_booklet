@@ -21,9 +21,10 @@
 \definecolor{myorange}{RGB}{255,117,40}
 \definecolor{mygray}{RGB}{164, 168, 172}
 \definecolor{mywhite}{RGB}{235, 238, 231}
-\definecolor{myblue}{RGB}{52, 115, 116}
+\definecolor{myblue}{RGB}{38, 88, 89}
+\definecolor{mygreen}{RGB}{128, 194, 61}
 
-\newcommand{\primarycolor}{myblue}
+\newcommand{\primarycolor}{mygreen}
 \newcommand{\secondarycolor}{mywhite}
 \newcommand{\ternarycolor}{mywhite}
 
@@ -36,11 +37,11 @@
 \makeatletter
 \@ifundefined{ifOnline}{% % check if already defined from the command line, if not define \ifOnline
 	\expandafter\newif\csname ifOnline\endcsname
-	\Onlinefalse %set to \Onlinefalse/\Onlinetrue for printed/online version
+	\Onlinetrue %set to \Onlinefalse/\Onlinetrue for printed/online version
 }{}
 \makeatother
 
-% define \type to input the right version of the abstracts
+% define \type to input the right version of the abstract
 \ifOnline
 \newcommand{\type}{o}
 \else
@@ -158,7 +159,10 @@
     ,toclevel=0%
 ]{chapter}%
 
-\setkomafont{chapter}{\normalfont\normalsize\bfseries\Huge} % koma-script-specific command
+\setkomafont{chapter}{\bfseries\Huge\color{myblue}} % 
+
+\setkomafont{section}{\bfseries\Large\color{myblue}} % 
+% koma-script-specific command
 
 \newcommand*{\mynumberedtest}[1]{% to test whether there is a number
   \if\relax\detokenize{#1}\relax%
@@ -166,6 +170,7 @@
     #1%
     
   \fi}
+
 
 %-------------------------------------------------chapter style definition
 

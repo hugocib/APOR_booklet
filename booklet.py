@@ -72,7 +72,7 @@ def format_authors(authors): #----------------------------------------------
             subnames = authors[i].split(' ')
         subnames = filter(None, subnames) #remove empty strings
         if len(subnames) > 2:
-            print 'long name'
+            print 'long name'\n
         if ',' in authors[i]: # if comma, assume Last, F.
             first = subnames[-1]
             last = subnames[0]
@@ -139,7 +139,7 @@ def txt2tex(file_name, verbose=False) :
              final text for the .tex files
     """
 
-    print file_name # format: t_name.txt or p_name.txt
+    print file_name\n # format: t_name.txt or p_name.txt
 
     file_type = file_name[0] # either talk 't' or poster 'p'
     file_id = file_name[2:-4] # 'name'
@@ -206,13 +206,13 @@ def txt2tex(file_name, verbose=False) :
     n_refs = len(refs)
 
     if verbose:
-        print '----RAW DATA'
-        print title
-        print authors
-        print aff_short
-        print affs
-        print refs
-        print
+        print '----RAW DATA';
+        print title;
+        print authors;
+        print aff_short;
+        print affs;
+        print refs;
+        print;
 
     i_speaker = 0
     affs_auth = [None]*n_auth # list of affiliations for each author
